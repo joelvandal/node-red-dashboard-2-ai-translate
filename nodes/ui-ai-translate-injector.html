@@ -1,0 +1,77 @@
+<script type="text/javascript">
+    RED.nodes.registerType('ai-translate-injector', {
+        category: 'dashboard',
+        color: '#1F8EF1',
+        defaults: {
+            name: { value: '' },
+            group: { type: 'ui-group', required: false }
+        },
+        inputs: 0,
+        outputs: 0,
+        icon: 'font-awesome/fa-language',
+        paletteLabel: 'ai translate',
+        label: function() {
+            return this.name || 'AI Translate Injector';
+        },
+        labelStyle: function() {
+            return this.name ? 'node_label_italic' : '';
+        }
+    });
+
+    // Load the client injector script when this node is loaded
+    (function() {
+        console.log('[AI Translate] Loading client injector...');
+        $.getScript('dashboard-2-ai-translate/client-injector.js')
+            .done(function() {
+                console.log('[AI Translate] Client injector loaded successfully');
+            })
+            .fail(function(jqxhr, settings, exception) {
+                console.error('[AI Translate] Failed to load client injector:', exception);
+            });
+    })();
+</script>
+
+<script type="text/html" data-template-name="ai-translate-injector">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="AI Translate Injector">
+    </div>
+    <div class="form-tips">
+        <p><strong>Important:</strong> Add this node to any flow and deploy to enable the AI Translate button.</p>
+        <p>The AI Translate button will be injected into the Dashboard 2.0 translation interface when you open the ui_base configuration.</p>
+        <p>You only need one instance of this node in your entire Node-RED instance.</p>
+    </div>
+</script>
+
+<script type="text/html" data-help-name="ai-translate-injector">
+    <p>Injects an AI-powered translation button into the Node-RED Dashboard 2.0 translation interface.</p>
+    
+    <h3>Details</h3>
+    <p>This configuration node automatically adds an "AI Translate" button to the Dashboard 2.0 translation interface, 
+    allowing you to translate UI elements using OpenAI or Anthropic APIs.</p>
+    
+    <p>Once installed, the button appears automatically in the translation interface, before the "Refresh" button.</p>
+    
+    <h3>Features</h3>
+    <ul>
+        <li>Automatic injection - no manual configuration needed</li>
+        <li>Support for OpenAI (GPT-3.5/GPT-4) and Anthropic (Claude 3)</li>
+        <li>Built-in rate limiting</li>
+        <li>Progress tracking for batch translations</li>
+        <li>Secure browser-based API key storage</li>
+    </ul>
+    
+    <h3>Usage</h3>
+    <ol>
+        <li>Install this node package</li>
+        <li>Restart Node-RED</li>
+        <li>Add this node to any flow</li>
+        <li>Deploy the flow</li>
+        <li>Open any Dashboard 2.0 node configuration (double-click)</li>
+        <li>Navigate to the translation interface</li>
+        <li>The "AI Translate" button will appear before the "Refresh" button</li>
+        <li>Click the button to start translating</li>
+    </ol>
+    
+    <p><strong>Note:</strong> You must add this node to a flow and deploy for the injection to work.</p>
+</script>

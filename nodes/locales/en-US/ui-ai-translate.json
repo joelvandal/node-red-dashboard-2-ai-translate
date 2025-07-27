@@ -1,0 +1,25 @@
+{
+    "ui-ai-translate": {
+        "label": {
+            "name": "Name",
+            "group": "Group",
+            "size": "Size",
+            "width": "Width",
+            "height": "Height",
+            "showButton": "Show Button",
+            "buttonLabel": "Button Label",
+            "buttonIcon": "Button Icon",
+            "defaultProvider": "Default Provider",
+            "enabledLanguages": "Enabled Languages"
+        },
+        "help": {
+            "name": "Optional name for this node",
+            "group": "Dashboard group to add this widget to",
+            "showButton": "Whether to show the AI Translate button",
+            "buttonLabel": "Text to display on the button",
+            "buttonIcon": "Font Awesome icon class for the button",
+            "defaultProvider": "Default translation provider to use",
+            "enabledLanguages": "Languages available for translation"
+        }
+    }
+}

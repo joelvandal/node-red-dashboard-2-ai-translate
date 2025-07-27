@@ -1,0 +1,62 @@
+<script type="text/html" data-help-name="ui-ai-translate">
+<p>A Node-RED Dashboard 2.0 widget that provides AI-powered translation functionality for UI elements.</p>
+
+<h3>Features</h3>
+<ul>
+    <li>Translate dashboard text using OpenAI (GPT) or Anthropic (Claude) APIs</li>
+    <li>Support for multiple languages</li>
+    <li>Rate limiting to avoid API throttling</li>
+    <li>Visual translation dialog with progress tracking</li>
+    <li>Batch translation support</li>
+</ul>
+
+<h3>Configuration</h3>
+<dl class="message-properties">
+    <dt>Show Button <span class="property-type">boolean</span></dt>
+    <dd>Whether to show the AI Translate button in the dashboard</dd>
+    
+    <dt>Button Label <span class="property-type">string</span></dt>
+    <dd>Text to display on the button</dd>
+    
+    <dt>Button Icon <span class="property-type">string</span></dt>
+    <dd>Font Awesome icon class for the button</dd>
+    
+    <dt>Default Provider <span class="property-type">string</span></dt>
+    <dd>Default translation provider (OpenAI or Anthropic)</dd>
+    
+    <dt>Enabled Languages <span class="property-type">array</span></dt>
+    <dd>List of language codes to enable for translation</dd>
+</dl>
+
+<h3>Inputs</h3>
+<dl class="message-properties">
+    <dt>payload <span class="property-type">object</span></dt>
+    <dd>Translation request containing:
+        <ul>
+            <li><code>text</code> - Text to translate</li>
+            <li><code>sourceLang</code> - Source language code (or "original" for auto-detect)</li>
+            <li><code>targetLang</code> - Target language code</li>
+            <li><code>provider</code> - Translation provider</li>
+            <li><code>apiKey</code> - API key for the provider</li>
+        </ul>
+    </dd>
+</dl>
+
+<h3>Outputs</h3>
+<dl class="message-properties">
+    <dt>payload <span class="property-type">object</span></dt>
+    <dd>Translation result containing:
+        <ul>
+            <li><code>translatedText</code> - The translated text</li>
+        </ul>
+    </dd>
+</dl>
+
+<h3>API Keys</h3>
+<p>API keys are stored locally in the browser and are never saved to the Node-RED flow.</p>
+<p>Rate limits:</p>
+<ul>
+    <li>OpenAI: 100ms between requests</li>
+    <li>Anthropic: 2 seconds between requests</li>
+</ul>
+</script>
