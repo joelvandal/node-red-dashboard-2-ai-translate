@@ -1,6 +1,6 @@
 {
-    "name": "@flowfuse/node-red-dashboard-2-ai-translate",
-    "version": "1.0.0",
+    "name": "@joelvandal/node-red-dashboard-2-ai-translate",
+    "version": "1.0.1",
     "description": "AI-powered translation addon for Node-RED Dashboard 2.0",
     "keywords": [
         "node-red",
@@ -14,20 +14,18 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/FlowFuse/node-red-dashboard-2-ai-translate.git"
+        "url": "https://github.com/joelvandal/node-red-dashboard-2-ai-translate.git"
     },
     "license": "Apache-2.0",
     "author": {
-        "name": "Your Name",
-        "url": "https://github.com/yourusername"
+        "name": "Joel Vandal",
+        "url": "https://github.com/joelvandal"
     },
     "contributors": [],
-    "exports": {
-        "import": "./resources/ui-ai-translate.esm.js",
-        "require": "./resources/ui-ai-translate.umd.js"
-    },
     "files": [
-        "nodes/*"
+        "nodes/**/*",
+        "LICENSE",
+        "README.md"
     ],
     "scripts": {
         "lint": "npm run lint:js && npm run lint:package",
@@ -56,6 +54,9 @@
         }
     },
     "node-red-dashboard-2": {
-        "version": "1.0.0"
+        "version": ">=1.0.26"
+    },
+    "peerDependencies": {
+        "@flowfuse/node-red-dashboard": ">=1.0.26"
     }
 }

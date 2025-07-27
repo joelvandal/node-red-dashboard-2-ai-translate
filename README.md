@@ -1,4 +1,4 @@
-# Node-RED Dashboard 2 AI Translate
+# @joelvandal/node-red-dashboard-2-ai-translate
 
 An AI-powered translation addon for Node-RED Dashboard 2.0 that injects an "AI Translate" button into the Dashboard 2.0 translation interface, enabling automatic translation of UI elements using OpenAI or Anthropic APIs.
 
@@ -13,8 +13,6 @@ An AI-powered translation addon for Node-RED Dashboard 2.0 that injects an "AI T
 
 ## Installation
 
-### Method 1: Manual Installation (Recommended)
-
 1. Navigate to your Node-RED directory:
 ```bash
 cd ~/.node-red
@@ -22,7 +20,7 @@ cd ~/.node-red
 
 2. Install the module:
 ```bash
-npm install /path/to/node-red-dashboard-2-ai-translate
+npm install @joelvandal/node-red-dashboard-2-ai-translate
 ```
 
 3. **Important**: Add the AI Translate Injector node to any flow in Node-RED
@@ -32,13 +30,6 @@ npm install /path/to/node-red-dashboard-2-ai-translate
    - Deploy
 
 4. Restart Node-RED
-
-### Method 2: Using Install Script
-
-```bash
-cd node-red-dashboard-2-ai-translate
-./install.sh
-```
 
 ## Configuration
 
@@ -163,4 +154,4 @@ Apache-2.0
 
 ## Credits
 
-Created for [FlowFuse Dashboard 2.0](https://dashboard.flowfuse.com)
+Created by Joel Vandal for [FlowFuse Dashboard 2.0](https://dashboard.flowfuse.com)
