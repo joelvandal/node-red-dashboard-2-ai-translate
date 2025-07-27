@@ -33,7 +33,14 @@
         "lint:js": "eslint --ext .js .",
         "lint:js:fix": "npm run lint:js -- --fix",
         "lint:package": "sort-package-json --check 'package.json'",
-        "lint:package:fix": "sort-package-json 'package.json'"
+        "lint:package:fix": "sort-package-json 'package.json'",
+        "pack": "npm pack",
+        "prepublishOnly": "npm run lint",
+        "publish:public": "npm publish --access public",
+        "publish:beta": "npm publish --access public --tag beta",
+        "version:patch": "npm version patch",
+        "version:minor": "npm version minor",
+        "version:major": "npm version major"
     },
     "dependencies": {
         "axios": "^1.8.4"
